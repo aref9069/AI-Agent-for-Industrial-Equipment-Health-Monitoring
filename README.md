@@ -1,71 +1,68 @@
 # AI-Agent-for-Industrial-Equipment-Health-Monitoring
 End-to-End Intelligent Maintenance: Multi-Agent Monitoring with FFT Analysis, Anomaly Detection, and RUL Estimation.
 
-🚀 Overview
+---
 
-This project implements an AI-driven predictive maintenance agent system designed to monitor industrial equipment using vibration, temperature, and acoustic sensor data. The system runs a multi-agent pipeline that processes raw signals, detects anomalies, forecasts Remaining Useful Life (RUL), and triggers maintenance alerts through an MCP-style interface.
+## 🚀 Overview
 
-This repository is designed as a capstone project demonstration integrating multiple advanced agent concepts including multi-agent orchestration, custom tools, memory, observability, and realistic industrial health monitoring workflows.
+This project implements an **AI-driven predictive maintenance multi-agent system** designed for industrial equipment health monitoring.  
+Using vibration, temperature, and acoustic sensor data, the system:
 
-🧠 Key Features
+1. Acquires and processes real-time sensor signals  
+2. Extracts spectral and statistical features  
+3. Detects anomalies  
+4. Estimates Remaining Useful Life (RUL)  
+5. Generates maintenance actions via an MCP-style interface  
 
-✔ Multi-Agent Architecture
+The repository serves as a **capstone demonstration**, integrating multi-agent orchestration, custom toolchains, memory management, observability, and realistic industrial health-monitoring workflows.
 
-Five coordinated agents work sequentially per machine, and in parallel across many machines:
+---
 
-Data Acquisition Agent
-Simulates real-time sensor ingestion (vibration, temperature, acoustic).
+## 🧠 Key Features
 
-Signal Processing Agent
-Applies FFT, bandpass filtering, envelope detection, and statistical feature extraction (SciPy/NumPy).
+### ✔ Multi-Agent Architecture
+Five coordinated agents operate sequentially per machine and in parallel across machines:
 
-Anomaly Detection Agent
-Computes anomaly scores using z-scores over health index trends.
+- **Data Acquisition Agent** – Simulates real-time sensor streams (vibration, temperature, acoustic).  
+- **Signal Processing Agent** – Performs FFT, bandpass filtering, envelope detection, and feature extraction.  
+- **Anomaly Detection Agent** – Computes anomaly scores using z-scores and trend-based health indices.  
+- **Prediction Agent** – Estimates RUL using a simple degradation model.  
+- **Alert & Action Agent** – Creates maintenance tickets via an MCP-style maintenance interface.
 
-Prediction Agent
-Forecasts Remaining Useful Life (RUL) using a mini degradation model.
+---
 
-Alert & Action Agent
-Generates maintenance tickets via an MCP-style maintenance interface.
+### ✔ Custom Signal Processing Tools
+Signal-processing toolkit built using NumPy/SciPy, including:
 
-✔ Custom Signal Processing Tools
+- Bandpass filtering  
+- Hilbert envelope detection  
+- FFT spectral analysis  
+- RMS, kurtosis, skewness  
+- Temperature & acoustic indicators  
 
-Implements a full classical vibration analysis pipeline, including:
+---
 
-Bandpass filtering
+### ✔ Memory Bank for Degradation Tracking
+Each machine stores historical:
 
-Hilbert envelope detection
+- Health index values  
+- Anomaly scores  
+- RUL predictions  
+- Timestamped sensor windows  
 
-FFT spectral analysis
+Enabling trend-based diagnostics and forecasting.
 
-RMS/kurtosis/skewness health indicators
+---
 
-Temperature & acoustic feature analysis
+### ✔ Parallel Monitoring
+The system uses `ThreadPoolExecutor` to simulate **real-time parallel monitoring of multiple machines**, similar to industrial IoT deployments.
 
-Tools are implemented directly in Python using NumPy and SciPy.
+---
 
-✔ MemoryBank for Degradation Tracking
+### ✔ MCP-Style Maintenance Actions
+The Alert & Action Agent communicates with a CMMS-like interface using a structured MCP-style call:
 
-Each piece of equipment stores historical:
-
-Health index
-
-Anomaly scores
-
-Timestamps
-
-RUL predictions
-
-This enables trend-based forecasting and more accurate anomaly detection.
-
-✔ Parallel Monitoring
-
-Using ThreadPoolExecutor, the system monitors multiple machines concurrently, simulating real-world industrial sensor streams.
-
-✔ MCP Integration (Stub)
-
-The Alert & Action Agent calls a structured MCP-like function:
-
+```json
 {
   "type": "mcp",
   "server_label": "maintenance_cmms",
