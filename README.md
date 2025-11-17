@@ -8,6 +8,7 @@ This project implements an AI-driven predictive maintenance agent system designe
 This repository is designed as a capstone project demonstration integrating multiple advanced agent concepts including multi-agent orchestration, custom tools, memory, observability, and realistic industrial health monitoring workflows.
 
 🧠 Key Features
+
 ✔ Multi-Agent Architecture
 
 Five coordinated agents work sequentially per machine, and in parallel across many machines:
