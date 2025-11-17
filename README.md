@@ -1,10 +1,12 @@
 # AI-Agent-for-Industrial-Equipment-Health-Monitoring
-End-to-End Intelligent Maintenance: Multi-Agent Monitoring with FFT Analysis, Anomaly Detection, and RUL Estimation
+End-to-End Intelligent Maintenance: Multi-Agent Monitoring with FFT Analysis, Anomaly Detection, and RUL Estimation.
+
 🚀 Overview
 
 This project implements an AI-driven predictive maintenance agent system designed to monitor industrial equipment using vibration, temperature, and acoustic sensor data. The system runs a multi-agent pipeline that processes raw signals, detects anomalies, forecasts Remaining Useful Life (RUL), and triggers maintenance alerts through an MCP-style interface.
 
 This repository is designed as a capstone project demonstration integrating multiple advanced agent concepts including multi-agent orchestration, custom tools, memory, observability, and realistic industrial health monitoring workflows.
+
 🧠 Key Features
 ✔ Multi-Agent Architecture
 
@@ -136,6 +138,7 @@ Trigger maintenance tickets
 Log everything to health_monitor.log
 
 🧪 Output Example (Console)
+
 [DataAcquisitionAgent] Fetching sensor window for EQP-002
 [SignalProcessingAgent] Running bandpass + envelope + FFT
 [AnomalyDetectionAgent] Health index=0.1523, anomaly score=2.45
