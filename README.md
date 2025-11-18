@@ -59,8 +59,9 @@ The system uses `ThreadPoolExecutor` to simulate **real-time parallel monitoring
 
 ---
 
-### ✔ MCP-Style Maintenance Actions
-The Alert & Action Agent communicates with a CMMS-like interface using a structured MCP-style call:
+## ✔ MCP-Style Maintenance Actions
+
+The **Alert & Action Agent** communicates with a CMMS-like interface using a structured **MCP-style tool call**:
 
 ```json
 {
@@ -68,21 +69,22 @@ The Alert & Action Agent communicates with a CMMS-like interface using a structu
   "server_label": "maintenance_cmms",
   "tool": "create_maintenance_ticket"
 }
+This represents how an autonomous agent would open maintenance tickets in a CMMS/EAM system.
 
 
-This represents how an agent would open tickets in a CMMS/EAM system.
+✔ Observability
 
-## ✔ Observability
-
-Logging is implemented through loguru, producing:
+Logging is implemented using loguru, generating:
 
 Detailed agent execution logs
 
-Health index and RUL trends
+Health index & RUL trends
 
-Maintenance actions and triggers
+Maintenance actions & triggers
 
-These logs can be extended to support OpenTelemetry spans/traces.
+The logging system can be extended to support OpenTelemetry spans/traces for full observability.
+
+
 
 📁 Repository Structure
 industrial-equipment-health-agent/
