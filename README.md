@@ -135,7 +135,20 @@ Trigger maintenance tickets
 
 Log everything to health_monitor.log
 
-🧪 Output Example (Console)
+## ✅ Dataset Used in This Project
+⭐ The dataset is synthetic and fully generated at runtime
+
+The project simulates:
+
+Vibration signals (sinusoidal + noise + harmonic components)
+
+Acoustic signals (slightly modified copy of vibration)
+
+Temperature readings (random drift + noise)
+
+However,it is designed to work with real-time sensor streams that industrial equipment typically generates.
+
+## 🧪 Output Example (Console)
 
 [DataAcquisitionAgent] Fetching sensor window for EQP-002
 [SignalProcessingAgent] Running bandpass + envelope + FFT
