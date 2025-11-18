@@ -69,6 +69,7 @@ The Alert & Action Agent communicates with a CMMS-like interface using a structu
   "tool": "create_maintenance_ticket"
 }
 
+---
 
 This represents how an agent would open tickets in a CMMS/EAM system.
 
